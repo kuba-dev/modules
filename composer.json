@@ -1,0 +1,50 @@
+{
+    "name": "kuba-dev/modules",
+    "description": "Laravel Modules",
+    "keywords": ["modules", "laravel", "kuba-dev"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kuba Dev",
+            "email": "kuban.kurmanaliev.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^7.5|^8.0",
+        "orchestra/testbench": "^4.0",
+        "spatie/phpunit-snapshot-assertions": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "src/Support/helpers.php"
+        ],
+        "psr-4": {
+            "KubaDev\\Modules\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KubaDev\\Modules\\Tests\\": "tests"
+        }
+    },
+    "suggest": {
+        "wikimedia/composer-merge-plugin": "Allows the ability to create and merge composer.json files for your individual modules for module-specific dependency management."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "KubaDev\\Modules\\ModulesServiceProvider"
+            ],
+            "aliases": {
+                "Module": "KubaDev\\Modules\\Facades\\Module"
+            }
+        }
+    }
+}

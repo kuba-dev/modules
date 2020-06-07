@@ -1,0 +1,11 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Models\Model;
+use Kyslik\ColumnSortable\Sortable;
+
+class DummyClass extends Model
+{
+    use Sortable;
+}

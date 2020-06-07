@@ -1,0 +1,19 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Http\Controllers\Controller;
+use App\Modules\DummyName\Models\DummyName;
+
+class DummyClass extends Controller
+{
+    /**
+     * DummyName model instance.
+     *
+     * @return DummyName
+     */
+    public function getModel()
+    {
+        return new DummyName();
+    }
+}
