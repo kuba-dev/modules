@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default_location' => app_path('Modules'),
+    'default_location' => 'app',
 
     /*
     |--------------------------------------------------------------------------

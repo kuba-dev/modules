@@ -111,6 +111,20 @@ class MakeModuleCommand extends Command
             $progress->advance();
         }
 
+        $slug  = $this->container['slug'];
+        $name  = $this->container['name'];
+        $table = Str::plural(Str::snake(class_basename($this->container['slug'])));
+
+        $this->callSilent('make:module:model', [
+            'slug' => $slug,
+            'name' => $name
+        ]);
+
+        $this->callSilent('make:module:migration', [
+            'slug' => $slug,
+            'name' => "create_{$table}_table"
+        ]);
+
         $progress->finish();
 
         event($this->container['slug'] . '.module.made');
